@@ -24,26 +24,22 @@ void main()
     {
       u_int switches = p2sw_read(),i;
       int sw_pressed = switches | switches;
-      switch(sw_pressed)
-	{
-	case 1:
-	  clearScreen(COLOR_RED);
-	  break;
+      
+      
+      if(!(switches & 1<<0))
+	clearScreen(COLOR_RED);
+      else if(!(switches & 1<<1))
+	clearScreen(COLOR_CYAN);
+      else if(!(switches & 1<<2))
+	clearScreen(COLOR_YELLOW);
+      else if(!(switches & 1<<3))
+	clearScreen(COLOR_PINK);
+      
 
-	case 2:
-	  clearScreen(COLOR_CYAN);
-	  break;
-
-	case 4:
-	  clearScreen(COLOR_YELLOW);
-	  break;
-
-	case 8:
-	  clearScreen(COLOR_PINK);
-	  break;
-
-	default:
-	  break;
-	}
+      /*
+      u_int selection = !(switches & 0x1111)
+	switch(selection)
+	  
+      */
     }
 }
