@@ -4,7 +4,17 @@
 #include <lcddraw.h>
 #include <p2switches.h>
 
+#include "stateMachines.h"
+#include "switches.h"
+
 #define GREEN_LED BIT6
+
+int redrawScreen = 1;
+
+static int sm1 = 1;
+static int sm2 = 1;
+static int sm3 = 1;
+static int sm4 = 1;
 
 void main()
 {
@@ -13,33 +23,11 @@ void main()
 
   configureClocks();
   lcd_init();
-  p2sw_init(15);
+  switch_init();
 
   or_sr(0x8);
-  u_char width = screenWidth, height = screenHeight;
-
+  enableWDTInterrupts();
+  
   clearScreen(COLOR_GREEN);
-
-  while(1)
-    {
-      u_int switches = p2sw_read(),i;
-      int sw_pressed = switches | switches;
-      
-      
-      if(!(switches & 1<<0))
-	clearScreen(COLOR_RED);
-      else if(!(switches & 1<<1))
-	clearScreen(COLOR_CYAN);
-      else if(!(switches & 1<<2))
-	clearScreen(COLOR_YELLOW);
-      else if(!(switches & 1<<3))
-	clearScreen(COLOR_PINK);
-      
-
-      /*
-      u_int selection = !(switches & 0x1111)
-	switch(selection)
-	  
-      */
-    }
+  
 }
