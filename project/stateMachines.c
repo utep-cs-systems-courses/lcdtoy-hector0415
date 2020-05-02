@@ -19,11 +19,13 @@ void state_advance()
       break;
 
     case 2:
-      clearScreen(COLOR_BLUE);
+      //      clearScreen(COLOR_BLUE);
+      drawString8x12(20,20,"test",COLOR_BLACK,COLOR_WHITE);
       break;
 
     case 3:
-      clearScreen(COLOR_YELLOW);
+      //      clearScreen(COLOR_YELLOW);
+      drawString5x7(20,40,"5x7 test",COLOR_BLACK,COLOR_WHITE);
       break;
 
     case 4:
