@@ -3,6 +3,8 @@
 
 extern char state;
 
+extern unsigned char wid,len,x,y;
+
 void state_advance();
 
 #endif
