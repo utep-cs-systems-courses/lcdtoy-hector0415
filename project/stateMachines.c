@@ -5,32 +5,39 @@
 #include "renderings.h"
 
 char state = 0;
-int s1c = 0;
-int s2c = 0;
-int s3c = 0;
-int s4c = 0;
+
+static u_char x = 0;
+static u_char y = 0;
+static u_char wid = 20;
+static u_char len = 20;
 
 void state_advance()
 {
   switch(state)
     {
     case 1:
-      //clearScreen(COLOR_RED);
-      draw_shape(50,50,25,25,COLOR_RED);
+      draw_shape(x,y,wid,len,COLOR_GREEN);
+      x = (x-5);
+      draw_shape(x,y,wid,len,COLOR_RED);
       break;
 
     case 2:
-      //      clearScreen(COLOR_BLUE);
-      drawString(20,20,"TEST",COLOR_BLACK,COLOR_WHITE);
+      draw_shape(x,y,wid,len,COLOR_GREEN);
+      x = (x+5);
+      draw_shape(x,y,wid,len,COLOR_RED);
+      
       break;
 
     case 3:
-      //      clearScreen(COLOR_YELLOW);
-      drawString5x7(20,40,"5x7 test",COLOR_BLACK,COLOR_WHITE);
+      draw_shape(x,y,wid,len,COLOR_GREEN);
+      y += 5;
+      draw_shape(x,y,wid,len,COLOR_RED);
       break;
 
     case 4:
-      clearScreen(COLOR_PURPLE);
+      draw_shape(x,y,wid,len,COLOR_GREEN);
+      y -= 5;
+      draw_shape(x,y,wid,len,COLOR_RED);
       break;
     }
 }

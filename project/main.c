@@ -11,11 +11,6 @@
 
 int redrawScreen = 1;
 
-static int sm1 = 1;
-static int sm2 = 1;
-static int sm3 = 1;
-static int sm4 = 1;
-
 void main()
 {
   P1DIR |= GREEN_LED;
@@ -26,6 +21,7 @@ void main()
   switch_init();
 
   or_sr(0x8);
+
   enableWDTInterrupts();
   
   clearScreen(COLOR_GREEN);

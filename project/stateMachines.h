@@ -3,8 +3,6 @@
 
 extern char state;
 
-extern int s1c,s2c,s3c,s4c;
-
 void state_advance();
 
 #endif
