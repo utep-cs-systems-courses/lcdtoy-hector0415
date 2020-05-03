@@ -1,5 +1,9 @@
-#LCD Toy
-
+# LCD Toy
+## What It Is
+This is a toy that can be loaded onto an MSP430 and draws a figure onto the
+screen that can be dynamically moved. As the shapes moves across the screen,
+it plays a tone that increases and decreases depending on what direction the
+shape is moving in.
 ## How To Install
 1. The first thing that must be done is install the libraries that are
 included in the root directory. The following command should be run in the
